@@ -1,0 +1,3 @@
+name: OlsonElliott-t3
+main: com.tenjava.entries.OlsonElliott.t3.TenJava
+version: '${project.version}'
