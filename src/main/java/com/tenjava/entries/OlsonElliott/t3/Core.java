@@ -15,7 +15,7 @@ public class Core extends JavaPlugin {
         getLogger().info("[HardcoreWorldGenerator] - v1.0.0 - Disabled");
     }
 
-    public ChunkGenerator getDefaultWorldGenerator(String worldName, String genID){
+    public ChunkGenerator getDefaultWorldGenerator(String world, String GenId) {
         return new TerrainGeneration();
     }
 }
