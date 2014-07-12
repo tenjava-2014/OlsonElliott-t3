@@ -1,5 +1,6 @@
 package com.tenjava.entries.OlsonElliott.t3;
 
+import org.bukkit.World;
 import org.bukkit.generator.ChunkGenerator;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -8,6 +9,7 @@ public class Core extends JavaPlugin {
     @Override
     public void onEnable(){
         getLogger().info("[HardcoreWorldGenerator] - v1.0.0 - Enabled");
+
 
     }
 
@@ -21,6 +23,8 @@ public class Core extends JavaPlugin {
         return new FlatLandGenerator(this);
     }
 
+    public static void setBiome(World world){
+    }
 
     public static void setBlocks(byte[][] result, int x, int y, int z, byte blockId){
         int w;

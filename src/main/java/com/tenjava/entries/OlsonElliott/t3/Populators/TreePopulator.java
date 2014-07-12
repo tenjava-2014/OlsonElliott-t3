@@ -36,7 +36,7 @@ public class TreePopulator extends BlockPopulator{
             } else if (world.getBiome(cXOff, cZOff) == Biome.DESERT){
                 world.generateTree(new Location(world, cXOff,
                         world.getHighestBlockYAt(cXOff, cZOff), cZOff), TreeType.TALL_REDWOOD);
-            } else if (world.getBiome(cXOff, cZOff) == Biome.EXTREME_HILLS_PLUS_MOUNTAINS){
+            } else if (world.getBiome(cXOff, cZOff) == Biome.FOREST){
                 world.generateTree(new Location(world, cXOff,
                         world.getHighestBlockYAt(cXOff, cZOff), cZOff), TreeType.DARK_OAK);
             } else if (world.getBiome(cXOff, cZOff) == Biome.SWAMPLAND){

@@ -4,6 +4,7 @@ import com.tenjava.entries.OlsonElliott.t3.Populators.TreePopulator;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.World;
+import org.bukkit.block.Biome;
 import org.bukkit.generator.BlockPopulator;
 import org.bukkit.generator.ChunkGenerator;
 
@@ -40,6 +41,7 @@ public class FlatLandGenerator extends ChunkGenerator {
     public byte[][] generatorBlockSections(World world, Random random,
                       int Chunkx, int Chunky, BiomeGrid biomeGrid){
 
+
         byte[][] result = new byte[256 / 16][];
         int x, y, z;
         for (x = 0; x < 16; x++){
@@ -51,6 +53,14 @@ public class FlatLandGenerator extends ChunkGenerator {
             for (z = 0; z <16; z++){
                 for (y = 1; y <= 2; y++){
                     Core.setBlocks(result, x, y, z, (byte) Material.DIRT.getId());
+                }
+            }
+        }
+
+        for (x = 0; x < 16; x++){
+            for (z = 0; z <16; z++){
+                for (y = 1; y <= 2; y++){
+                    world.setBiome(x, z, Biome.EXTREME_HILLS_MOUNTAINS);
                 }
             }
         }
@@ -68,7 +78,11 @@ public class FlatLandGenerator extends ChunkGenerator {
                             if (random.nextInt(50) > 35){
                                 Core.setBlocks(result, x, y, z, (byte) Material.OBSIDIAN.getId());
                             } else {
-                                Core.setBlocks(result, x, y, z, (byte) Material.STONE.getId());
+                                if (random.nextInt(70) > 40){
+                                    Core.setBlocks(result, x, y, z, (byte) Material.WATER.getId());
+                                } else {
+                                    Core.setBlocks(result, x, y, z, (byte) Material.STONE.getId());
+                                }
                             }
                         }
                     }
@@ -89,7 +103,11 @@ public class FlatLandGenerator extends ChunkGenerator {
                             if (random.nextInt(75) > 50){
                                 Core.setBlocks(result, x, y, z, (byte) Material.WATER.getId());
                             } else {
-                                Core.setBlocks(result, x, y, z, (byte) Material.CACTUS.getId());
+                                if (random.nextInt(50) > 30){
+                                    Core.setBlocks(result, x, y, z, (byte) Material.CACTUS.getId());
+                                } else {
+                                    Core.setBlocks(result, x, y, z, (byte) Material.AIR.getId());
+                                }
                             }
                         }
                     }
