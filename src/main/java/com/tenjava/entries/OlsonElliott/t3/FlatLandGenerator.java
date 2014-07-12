@@ -99,7 +99,7 @@ public class FlatLandGenerator extends ChunkGenerator {
     public short[][] getExtBlockSections(World world, Random random, int chunkX, int chunkZ, BiomeGrid biomes){
         short[][] result = new short[256 / 16][];
         int x, y, z;
-
+        int w;
         for (x = 0; x < 16; x++){
             for (z = 0; z <16; z++){
                 Core.setBlocksShort(result, x, 0, z, (byte) Material.BEDROCK.getId());

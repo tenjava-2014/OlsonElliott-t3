@@ -22,6 +22,7 @@ public class TreePopulator extends BlockPopulator{
     public void populate(World world, Random random, Chunk chunk) {
         int cX = chunk.getX() * 16;
         int cZ = chunk.getZ() * 16;
+        int w;
         int cZOff = cX + random.nextInt(10);
         int cXOff = cZ + random.nextInt(12);
 

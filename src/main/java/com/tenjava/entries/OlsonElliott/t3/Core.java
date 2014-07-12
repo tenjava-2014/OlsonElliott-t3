@@ -23,6 +23,7 @@ public class Core extends JavaPlugin {
 
 
     public static void setBlocks(byte[][] result, int x, int y, int z, byte blockId){
+        int w;
         if (result[y>>4] == null){
             result[y>>4] = new byte[4096];
         }
