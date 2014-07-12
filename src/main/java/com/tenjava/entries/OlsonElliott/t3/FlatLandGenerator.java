@@ -84,9 +84,13 @@ public class FlatLandGenerator extends ChunkGenerator {
                         Core.setBlocks(result, x, y, z, (byte) Material.SAND.getId());
                     } else {
                         if (random.nextInt(140) > 90){
-                            Core.setBlocks(result, x, y, z, (byte) Material.WATER.getId());
+                            Core.setBlocks(result, x, y, z, (byte) Material.SANDSTONE.getId());
                         } else {
-                            Core.setBlocks(result, x, y, z, (byte) Material.CACTUS.getId());
+                            if (random.nextInt(75) > 50){
+                                Core.setBlocks(result, x, y, z, (byte) Material.WATER.getId());
+                            } else {
+                                Core.setBlocks(result, x, y, z, (byte) Material.CACTUS.getId());
+                            }
                         }
                     }
                 }
