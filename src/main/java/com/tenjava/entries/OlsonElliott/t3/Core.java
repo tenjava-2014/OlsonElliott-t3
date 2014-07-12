@@ -17,9 +17,22 @@ public class Core extends JavaPlugin {
 
     }
 
-    public ChunkGenerator getDeafulatWorldGenerator(String world, String id){
-        return new FlatLandGenerator();
+    public ChunkGenerator getDefaultGenerator(String world, String id){
+        return new FlatLandGenerator(this);
     }
 
 
+    public static void setBlocks(byte[][] result, int x, int y, int z, byte blockId){
+        if (result[y>>4] == null){
+            result[y>>4] = new byte[4096];
+        }
+        result[y>>4][((y&0xF)<<8) | (z << 4) | x] = blockId;
+    }
+
+    public static void setBlocksShort(short[][] result, int x, int y, int z, byte blockId){
+        if (result[y>>4] == null){
+            result[y>>4] = new short[4096];
+        }
+        result[y>>4][((y&0xF)<<8) | (z << 4) | x] = blockId;
+    }
 }
